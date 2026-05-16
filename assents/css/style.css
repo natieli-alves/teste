@@ -1,0 +1,7 @@
+*{
+    margin: 0; /*Remove o espaçamento de fora do elemento*/
+    padding: 0; /*Remove o espaçamento interno do elemento*/
+    box-sizing: border-box; /*Define sobre o tamanho dos itens para evitar sobreesposição*/
+    font-family: Arial, sans-serif; /*Tipografia da fonte*/
+    font-size: 16px; /*Tamanho da fonte*/
+}

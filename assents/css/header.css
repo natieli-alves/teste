@@ -1,0 +1,45 @@
+/*===========================================ESTILO PARA O CABEÇALHO==========================================*/
+header{
+    background: #333; /*Definir cor do elemento*/
+    color: #FFF; /*Definir cor da fonte*/
+    padding: 10px; /*Remover o espaçamento interno do elemento*/
+    display: flex; /*Exibe os itens lado a lado*/
+    align-items: center; /*Centralização na horizontal*/
+    position: relative; /*Desloca elemento do grupo onde esta inserido*/
+}
+
+/*===========================================ESTILO PARA O LOGO================================================*/
+#logo{
+    height: 50px; /*Definir altura da imagem*/
+}
+
+/*===========================================ESTILO PARA O MENU DE NAVEGAÇÃO===================================*/
+nav ul{
+    list-style: none; /*Remove itens de lista*/
+    display: flex;
+    gap: 20px; /*Espaçamento nos elementos interno ao elemento pai*/
+}
+
+nav ul li a{
+    text-decoration: none; /*Remove o underline no link*/
+    color: #FFF;
+    padding: 10px 20px; 
+}
+
+nav ul li a:hover{
+    border-bottom: solid 6px #70a340;
+    background: #4d4e47;
+}
+
+/*===========================================                         ===================================*/
+.menu-toggle{
+    width: 1px;
+    height: 1px;
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.menu-icon{
+    display: none;
+}
