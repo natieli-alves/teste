@@ -11,6 +11,8 @@ header{
 /*===========================================ESTILO PARA O LOGO================================================*/
 #logo{
     height: 50px; /*Definir altura da imagem*/
+    position: relative;
+    z-index: 3;
 }
 
 /*===========================================ESTILO PARA O MENU DE NAVEGAÇÃO===================================*/
@@ -31,7 +33,7 @@ nav ul li a:hover{
     background: #4d4e47;
 }
 
-/*===========================================                         ===================================*/
+/*=========================================== Estilização dos incones ===================================*/
 .menu-toggle{
     width: 1px;
     height: 1px;
@@ -42,4 +44,69 @@ nav ul li a:hover{
 
 .menu-icon{
     display: none;
+}
+
+/*=========================================== Configuração de tela ===================================*/
+@media screen and (max-width: 1024px){
+    header{
+        justify-content: space-between;
+    }
+
+    .menu-icon{
+        width: 42px;
+        height: 42px;
+        display: flex;
+        align-items: center;
+        color: #FFF;
+        font-size: 32px;
+        cursor: pointer;
+    }
+
+    .icon-menu{
+        transition: transform 0.3s ease, opacity 0.3s ease; /*efeito de transição para ocultar o icone e efeito para ocultar a opacidade*/
+    }
+
+    .menu-icon .icon-close{
+        display: none;
+    }
+
+    .menu-lateral{
+        width: 260px;
+        height: 200vh; /*Define a altura da tela em 100% da altura visivel*/
+        position: fixed;
+        top: 0;
+        left: 0;
+        transform: translateX(-100%); /*Definindo efeito para deslizar menu para 100% a esquerda*/
+        transition: 0.3s ease; /*Define evento para deslizar o menu na tela*/
+        z-index: 2; /*Define a altura do nivel da camada*/
+        padding: 90px 20px;
+        background-color: #333;
+        box-shadow: 4px 0 12px rgba(0, 0, 0, 0.25); /*Cria um sombra no elemento*/
+    }
+
+    .menu-toggle:checked ~ .menu-lateral{ /*Seleciona o menu-toggle pelo check do checkbox e procura um irmao (~) e aplica o efeito de transição*/
+        transform: translateX(0);
+    }
+
+    .menu-toggle:checked + .menu-icon .icon-open{ /*Seleciona o irmao imediatamente após o checkbox clicado*/
+        display: none;
+    }
+
+    .menu-toggle:checked + .menu-icon .icon-close{
+        display: block;
+    }
+
+    .menu-toggle:checked + .menu-icon i{
+        transform: rotate(180deg); /*Aplica efeito de rotação no icone em 180 graus*/
+    }
+
+    nav ul{
+        flex-direction: column;
+        gap: 25px;
+    }
+
+    nav ul li a{
+        padding: 10px;
+        display: block;
+    }
 }
